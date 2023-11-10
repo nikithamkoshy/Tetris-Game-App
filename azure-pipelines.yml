@@ -9,14 +9,7 @@ trigger:
 pool:
   name: Default
 
-stages:
-- stage: test
-  displayName: Test Stage
-  jobs:
-  - job: deploy
-    displayName: Build
-    #environment: Dev
-    steps:
+steps:
         - script: echo Hello, world!
           displayName: 'Run a one-line script'
 
