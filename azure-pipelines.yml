@@ -9,11 +9,16 @@ trigger:
 pool:
   name: Default
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+stages:
+- stage: test
+  displayName: Test Stage
+  jobs:
+  - job: deploy
+    displayName: Build
+    #environment: Dev
+    steps:
+        - script: echo Hello, world!
+          displayName: 'Run a one-line script'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+        - script: echo Add other tasks to build, test, and deploy your project.
+          displayName: 'Run a multi-line script'
