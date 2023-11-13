@@ -10,21 +10,9 @@ pool:
   name: Default
   environment: Dev
 
-
 steps:
-          - task: SonarQubePrepare@5
-            inputs:
-                SonarQube: 'Sonarqube'
-                scannerMode: 'MSBuild'
-                projectKey: 'niks-scot_niks-scot_AYvIa7pKaFL0an70kLdD'
-                projectName: 'Niks_scot'
-                
-          - task: SonarQubeAnalyze@5
-            inputs:
-              jdkversion: 'JAVA_HOME_11_X64'
+        - script: echo Hello, world!
+          displayName: 'Run a one-line script'
 
-          - task: SonarQubePublish@5
-            inputs:
-              pollingTimeoutSec: '300'
-                
-
+        - script: echo Add other tasks to build, test, and deploy your project.
+          displayName: 'Run a multi-line script'
