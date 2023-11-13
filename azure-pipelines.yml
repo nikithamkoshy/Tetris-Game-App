@@ -24,7 +24,7 @@ steps:
             inputs:
               script: echo Hello, world!
               
-          - task: BashScrip@1
+          - task: BashScript@1
             displayName: 'Run a multi-line script'
             inputs:
              script: |
