@@ -10,9 +10,22 @@ pool:
   name: Default
   environment: Dev
 
-steps:
-        - script: echo Hello, world!
-          displayName: 'Run a one-line script'
 
-        - script: echo Add other tasks to build, test, and deploy your project.
-          displayName: 'Run a multi-line script'
+steps:
+          - task: SonarQubePrepare@5
+            inputs:
+                SonarQube: 'Sonarqube'
+                scannerMode: 'MSBuild'
+                projectKey: 'niks-scot_niks-scot_AYvIa7pKaFL0an70kLdD'
+                projectName: 'Niks_scot'
+                
+          - task: Build 
+            displayName: 'Run a one-line script'
+            inputs:
+              script: echo Hello, world!
+              
+          - task: BashScript
+            displayName: 'Run a multi-line script'
+            inputs:
+             script: |
+              echo Add other tasks to build, test, and deploy your project.
