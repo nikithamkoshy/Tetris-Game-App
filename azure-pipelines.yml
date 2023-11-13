@@ -27,19 +27,20 @@ steps:
      - script: echo Add other tasks to build, test, and deploy your project.
        displayName: 'Run a multi-line script'
        
+      
      - task: SonarQubePrepare@5
        inputs:
-        SonarQube: 'Sonarqube'
-        scannerMode: 'CLI'
-        configMode: 'manual'
-        cliProjectKey: 'sonarproject'
-        cliProjectName: 'TetrisSonar'
-        cliSources: '.'
-        extraProperties: |
-          # Additional properties that will be passed to the scanner, 
-          # Put one key=value per line, example:
-          # sonar.exclusions=**/*.bin
-          sonar.java.binaries=.
+         SonarQube: 'Sonarqube'
+         scannerMode: 'CLI'
+         configMode: 'manual'
+         cliProjectKey: 'niks-scot_niks-scot_AYvJClgJ5oUjC981IGa-'
+         cliProjectName: 'TetrisSonar'
+         cliSources: '.'
+         extraProperties: |
+           # Additional properties that will be passed to the scanner, 
+           # Put one key=value per line, example:
+           # sonar.exclusions=**/*.bin
+           sonar.java.binaries=.
 
      - task: SonarQubeAnalyze@5
        inputs:
