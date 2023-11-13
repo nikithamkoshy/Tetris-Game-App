@@ -19,12 +19,12 @@ steps:
                 projectKey: 'niks-scot_niks-scot_AYvIa7pKaFL0an70kLdD'
                 projectName: 'Niks_scot'
                 
-          - task: Build 
+          - task: Build@1
             displayName: 'Run a one-line script'
             inputs:
               script: echo Hello, world!
               
-          - task: BashScript
+          - task: BashScrip@1
             displayName: 'Run a multi-line script'
             inputs:
              script: |
